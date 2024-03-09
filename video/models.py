@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 import uuid
@@ -49,7 +50,7 @@ class Genre(models.Model):
     
 class MovieList(models.Model):
     owner_user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
+        User,
         on_delete=models.CASCADE,
     )
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)

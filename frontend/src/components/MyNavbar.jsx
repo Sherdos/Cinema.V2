@@ -4,11 +4,15 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function MyNavbar() {
   return (
-    <Navbar expand="lg" data-bs-theme="dark" className="bg-body-tertiary">
+    <Navbar
+      expand="lg"
+      fixed="top"
+      data-bs-theme="dark"
+      className="bg-body-tertiary"
+    >
       <Container fluid>
         <Navbar.Brand href="#">Кино для всех</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -35,11 +39,11 @@ function MyNavbar() {
           <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Поиск"
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success">Поиск</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
