@@ -1,18 +1,19 @@
-import MyNavbar from "./components/MyNavbar";
-import MyCard from "./components/MyCard";
-import Slider from "./components/Slider";
-import Container from "react-bootstrap/Container";
-import Carousel from "react-bootstrap/Carousel";
-
+import MyNavbar from "./components/Navbar/MyNavbar";
+import Home from "./pages/Home";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import ShowPage from "./pages/ShowPage";
 function App() {
   return (
     <>
       <div className="App">
-        <MyNavbar />
-
-        <Slider />
-        
-            <MyCard />
+        <Router>
+          <MyNavbar />
+          <div style={{ marginTop: "56px" }}></div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/show/:id" element={<ShowPage uuid="f" />} />
+          </Routes>
+        </Router>
       </div>
     </>
   );

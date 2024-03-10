@@ -5,7 +5,7 @@ import "./banner.jpg";
 function Slider() {
   return (
     <>
-      <Carousel style={{ marginTop: "56px" }}>
+      <Carousel >
         {["Primary", "Secondary", "Success", "Danger", "", "", ""].map(
           (variant) => (
             <Carousel.Item>

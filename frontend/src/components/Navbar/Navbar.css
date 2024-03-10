@@ -1,0 +1,28 @@
+.nav-link,
+.search_button,
+.nav-link a {
+  color: gray !important;
+  text-decoration: none;
+  &:hover {
+    color: white !important;
+  }
+}
+.search_button:hover + .icon_search > svg path {
+  fill: white !important;
+}
+
+
+
+.search_button:hover .icon_search {
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(100deg)
+    brightness(119%) contrast(119%);
+}
+.my-modal-content,
+.my-modal-header {
+  background-color: black; /* Change this color as per your requirement */
+  color: white;
+}
+
+.my-modal-header .btn-close {
+  background-color: red;
+}

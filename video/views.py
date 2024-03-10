@@ -8,3 +8,8 @@ from video.serializers import MovieSerializer
 class MovieListAPIView(generics.ListAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
+    
+class MovieDetailAPIView(generics.RetrieveAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+    lookup_field = 'uu_id'
