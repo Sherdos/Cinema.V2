@@ -11,7 +11,7 @@ function App() {
           <div style={{ marginTop: "56px" }}></div>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/show/:id" element={<ShowPage uuid="f" />} />
+            <Route path="/show/:uuid" element={<ShowPage />} />
           </Routes>
         </Router>
       </div>

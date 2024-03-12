@@ -1,13 +1,22 @@
+import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import MyBreadcrumbExample from "../components/Breadcrumbs/MyBreadcrumbs";
+
 function ShowPage(props) {
+  const params = useParams();
   const [card, setCard] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const paths = [
+    { title: "Главная", url: "/", is_active: false },
+    { title: card.title, url: "", is_active: true },
+  ];
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/v1/movie/" + props.uu_id + "/"
+          "http://127.0.0.1:8000/api/v1/movie/" + params.uuid + "/"
         );
         setCard(response.data);
       } catch (error) {
@@ -30,7 +39,7 @@ function ShowPage(props) {
   return (
     <>
       <div className="ShowPage">
-        <h1>Hello movie {card.title}</h1>
+        <MyBreadcrumbExample paths={paths}></MyBreadcrumbExample>
       </div>
     </>
   );

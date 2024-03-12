@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # my apps
     'video.apps.VideoConfig',
+    'slider.apps.SliderConfig',
+    
+    # other resourses
     'rest_framework',
     'corsheaders',
 ]

@@ -1,11 +1,11 @@
 import MyCardGroup from "../components/Cards/MyCardGroup";
-import Slider from "../components/Slider";
+import MySlider from "../components/Slider/MySlider";
 
 function Home() {
   return (
     <>
       <div className="Home">
-        <Slider />
+        <MySlider />
         <MyCardGroup />
       </div>
     </>
