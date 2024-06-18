@@ -1,7 +1,15 @@
-from django.urls import path
-from video import views
+from django.urls import include, path
+from rest_framework import routers
+
+from video.views import MovieViewSet
+from video.views import GenreOrderAPIView, SearchAPIView
+
+router = routers.DefaultRouter()
+router.register(r'movie', MovieViewSet, basename='movie')
+
 
 urlpatterns = [
-    path('movie/', views.MovieListAPIView.as_view()),
-    path('movie/<str:uu_id>/', views.MovieDetailAPIView.as_view())
+    path('', include(router.urls)),
+    path('genre/<slug:slug>/', GenreOrderAPIView.as_view(), name='order_genre'),
+    path('search/', SearchAPIView.as_view()),
 ]
