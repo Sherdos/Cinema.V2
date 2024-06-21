@@ -54,3 +54,4 @@ class MovieList(models.Model):
         on_delete=models.CASCADE,
     )
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+
