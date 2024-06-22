@@ -13,7 +13,7 @@ class Movie(models.Model):
     title = models.CharField(max_length=255, verbose_name = 'название')
     description = models.TextField( verbose_name = 'описание')
     release_date = models.DateField( verbose_name = 'дата выхода')
-    genre = models.ForeignKey('video.Genre', on_delete = models.CASCADE,  verbose_name = 'жанр')
+    genre = models.ForeignKey('video.Genre', on_delete = models.CASCADE,  verbose_name = 'жанр', related_name='genre')
     image = models.ImageField(upload_to='movie_images/')
     video = models.FileField(upload_to='movie_videos/')
     movie_views = models.IntegerField(default=0)
@@ -54,3 +54,4 @@ class MovieList(models.Model):
         on_delete=models.CASCADE,
     )
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+
